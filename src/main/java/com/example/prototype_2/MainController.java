@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -41,7 +42,7 @@ public class MainController implements Initializable {
     private RadioButton rdnMale;
 
     @FXML
-    private TextField txtAddress;
+    private TextField txtAmount;
 
     @FXML
     private TextArea txtEditor;
@@ -61,7 +62,30 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    void onSave(ActionEvent event) {
+    void onSave(ActionEvent event) throws FileNotFoundException {
+        String name = txtName.getText();
+        String foneNmuber = txtPhone.getText();
+        String amount = txtAmount.getText();
+        String gender = rdnMale.isSelected()? "male":"female";
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Debtor Details");
+        fileChooser.setInitialFileName("Save Debtor Details.txt");
+
+        Stage stage =(Stage) btnSaveDebt.getScene().getWindow();
+        File file = fileChooser.showSaveDialog(stage);
+
+        if(file!=null){
+            PrintWriter write = new PrintWriter(file);
+            write.println("Name "+name);
+            write.println("Phone "+foneNmuber);
+            write.println("Amount "+amount);
+            write.println("Gender "+gender);
+        }
+
+
+
+
 
     }
 
