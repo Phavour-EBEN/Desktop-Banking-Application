@@ -75,17 +75,18 @@ public class MainController implements Initializable {
         Stage stage =(Stage) btnSaveDebt.getScene().getWindow();
         File file = fileChooser.showSaveDialog(stage);
 
-        if(file!=null){
-            PrintWriter write = new PrintWriter(file);
-            write.println("Name "+name);
-            write.println("Phone "+foneNmuber);
-            write.println("Amount "+amount);
-            write.println("Gender "+gender);
+        if(file != null) {
+            try (PrintWriter writer = new PrintWriter(file)) {
+                writer.println("Name: " + name);
+                writer.println("Phone: " + foneNmuber);
+                writer.println("Amount: " + amount);
+                writer.println("Gender: " + gender);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                // Handle file not found exception
+            }
+
         }
-
-
-
-
 
     }
 
