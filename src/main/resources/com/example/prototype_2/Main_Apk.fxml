@@ -39,6 +39,6 @@
       <Button fx:id="btnViewDebtDetail" layoutX="446.0" layoutY="76.0" mnemonicParsing="false" onAction="#onViewDebtDetails" prefHeight="26.0" prefWidth="358.0" text="View Existing Debtor Detail" />
       <TextArea fx:id="txtEditor" layoutX="455.0" layoutY="122.0" prefHeight="276.0" prefWidth="348.0" />
       <Button fx:id="btnEdit" layoutX="498.0" layoutY="420.0" mnemonicParsing="false" onAction="#onEdit" prefHeight="26.0" prefWidth="105.0" text="Edit Information" />
-      <Button fx:id="btnSaveUpdate" layoutX="680.0" layoutY="420.0" mnemonicParsing="false" onAction="#onSave" prefHeight="26.0" prefWidth="94.0" text="Save Updates" />
+      <Button fx:id="btnSaveUpdate" layoutX="680.0" layoutY="420.0" mnemonicParsing="false" onAction="#onSaveUpdates" prefHeight="26.0" prefWidth="94.0" text="Save Updates" />
    </children>
 </AnchorPane>

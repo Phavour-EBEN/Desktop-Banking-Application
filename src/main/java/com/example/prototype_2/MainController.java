@@ -114,6 +114,23 @@ public class MainController implements Initializable {
 
     }
     @FXML
+    void onSaveUpdates(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Text File");
+        File file = fileChooser.showSaveDialog(txtEditor.getScene().getWindow());
+
+
+        if (file != null) {
+            try (PrintWriter writer = new PrintWriter(file)) {
+                writer.println(txtEditor.getText());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    @FXML
     void onClose(ActionEvent event) throws IOException {
 
         Stage stages = (Stage) btnSaveDebt.getScene().getWindow();
