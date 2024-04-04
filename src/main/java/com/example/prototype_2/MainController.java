@@ -1,5 +1,6 @@
 package com.example.prototype_2;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -76,12 +77,16 @@ public class MainController implements Initializable {
         btnEdit.setDisable(false);
 
         while (readFile.hasNextLine()){
-
+            String output = readFile.nextLine();
+            txtEditor.appendText(output+"\n");
         }
+        txtEditor.setEditable(true);
+        btnSaveUpdate.setDisable(false);
 
     }
     @FXML
     void onClose(ActionEvent event) throws IOException {
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),600,400);
@@ -89,6 +94,7 @@ public class MainController implements Initializable {
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
+
     }
 
 
@@ -96,5 +102,6 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         btnEdit.setDisable(true);
         btnSaveUpdate.setDisable(true);
+        txtEditor.setEditable(false);
     }
 }

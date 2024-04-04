@@ -95,7 +95,6 @@ public class HelloController {
     void onLogin(ActionEvent event) throws IOException {
         String username = txtUsername.getText();
         String password = txtPassword.getText();
-        btnLogin.getScene().getWindow().hide();
 
         if(username.equals("admin") && password.equals("54321")){
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Main_Apk.fxml"));
@@ -104,6 +103,7 @@ public class HelloController {
             stage.setTitle("Customer Details");
             stage.setScene(scene);
             stage.show();
+            btnLogin.getScene().getWindow().hide();
 
         }else {
 //            lblLabel.setVisible(true);
