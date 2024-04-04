@@ -82,7 +82,6 @@ public class MainController implements Initializable {
     }
     @FXML
     void onClose(ActionEvent event) throws IOException {
-        mnClose.getS
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),600,400);
@@ -90,8 +89,6 @@ public class MainController implements Initializable {
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
-
-
     }
 
 
