@@ -87,6 +87,10 @@ public class MainController implements Initializable {
             }
 
         }
+        txtName.setText("");
+        txtPhone.setText("");
+        txtAmount.setText("");
+        Gender.selectToggle(null);
 
     }
 
@@ -112,6 +116,8 @@ public class MainController implements Initializable {
     @FXML
     void onClose(ActionEvent event) throws IOException {
 
+        Stage stages = (Stage) btnSaveDebt.getScene().getWindow();
+        stages.close();
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),600,400);

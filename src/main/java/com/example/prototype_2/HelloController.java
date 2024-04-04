@@ -103,7 +103,9 @@ public class HelloController {
             stage.setTitle("Customer Details");
             stage.setScene(scene);
             stage.show();
-            btnLogin.getScene().getWindow().hide();
+
+            Stage stages = (Stage) btnLogin.getScene().getWindow();
+            stages.close();
 
         }else {
 //            lblLabel.setVisible(true);
