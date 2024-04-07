@@ -128,7 +128,6 @@ public class MainController implements Initializable {
             }
         }
         txtEditor.setText("");
-
     }
 
     @FXML
@@ -145,7 +144,6 @@ public class MainController implements Initializable {
         stage.show();
 
     }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
